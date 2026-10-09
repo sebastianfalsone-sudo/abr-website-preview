@@ -1,20 +1,20 @@
 /* ==========================================================
-   MOBILE NAVIGATION
+   MOBILE MENU
 ========================================================== */
 
-const menuToggle =
-  document.getElementById("menuToggle");
+const menuButton =
+  document.getElementById("menuButton");
 
 const navLinks =
   document.getElementById("navLinks");
 
 
-menuToggle.addEventListener("click", () => {
+menuButton.addEventListener("click", () => {
 
   const open =
     navLinks.classList.toggle("open");
 
-  menuToggle.setAttribute("aria-expanded", String(open));
+  menuButton.setAttribute("aria-expanded", String(open));
 
 });
 
@@ -25,7 +25,7 @@ navLinks.querySelectorAll("a").forEach(link => {
 
     navLinks.classList.remove("open");
 
-    menuToggle.setAttribute("aria-expanded", "false");
+    menuButton.setAttribute("aria-expanded", "false");
 
   });
 
@@ -33,34 +33,14 @@ navLinks.querySelectorAll("a").forEach(link => {
 
 
 /* ==========================================================
-   OPEN LINKED <details> (e.g. #warranty)
-========================================================== */
-
-function openLinkedDetails() {
-
-  if (!location.hash) return;
-
-  const target =
-    document.querySelector(`details${location.hash}`);
-
-  if (target) target.open = true;
-
-}
-
-window.addEventListener("hashchange", openLinkedDetails);
-
-openLinkedDetails();
-
-
-/* ==========================================================
-   ESTIMATE FORM → EMAIL DRAFT
+   INSPECTION FORM → EMAIL DRAFT
    Set BUSINESS_EMAIL (or connect a form service) before launch.
 ========================================================== */
 
 const BUSINESS_EMAIL = "REPLACE_WITH_BUSINESS_EMAIL";
 
 const form =
-  document.getElementById("estimateForm");
+  document.getElementById("inspectionForm");
 
 const formMessage =
   document.getElementById("formMessage");
@@ -80,19 +60,18 @@ form.addEventListener("submit", event => {
 
   const body = [
     `Name: ${data.get("name")}`,
-    `Phone: ${data.get("phone")}`,
     `Email: ${data.get("email")}`,
-    `Property Address: ${data.get("address")}`,
-    `Property Type: ${data.get("property")}`,
-    `Concern: ${data.get("issue")}`,
+    `Phone: ${data.get("phone")}`,
+    `Property City: ${data.get("location")}`,
+    `Service: ${data.get("service")}`,
     "",
-    "Details:",
-    data.get("message") || ""
+    "What I've noticed:",
+    data.get("message")
   ].join("\n");
 
   window.location.href =
     `mailto:${BUSINESS_EMAIL}` +
-    `?subject=${encodeURIComponent("Bat Inspection Estimate Request - " + data.get("name"))}` +
+    `?subject=${encodeURIComponent("Bat Inspection Request - " + data.get("name"))}` +
     `&body=${encodeURIComponent(body)}`;
 
   formMessage.textContent =
@@ -102,7 +81,7 @@ form.addEventListener("submit", event => {
 
 
 /* ==========================================================
-   COPYRIGHT
+   COPYRIGHT YEAR
 ========================================================== */
 
 document.getElementById("year").textContent =
