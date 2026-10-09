@@ -33,11 +33,11 @@ navLinks.querySelectorAll("a").forEach(link => {
 
 
 /* ==========================================================
-   INSPECTION FORM → americanbat@gmail.com (via FormSubmit)
+   INSPECTION FORM → EMAIL TO americanbat@gmail.com
+   Opens the visitor's email app with the request pre-filled.
 ========================================================== */
 
-const FORM_ENDPOINT =
-  "https://formsubmit.co/ajax/americanbat@gmail.com";
+const BUSINESS_EMAIL = "americanbat@gmail.com";
 
 const form =
   document.getElementById("inspectionForm");
@@ -45,54 +45,34 @@ const form =
 const formMessage =
   document.getElementById("formMessage");
 
-const submitButton =
-  form.querySelector('button[type="submit"]');
 
-
-form.addEventListener("submit", async event => {
+form.addEventListener("submit", event => {
 
   event.preventDefault();
 
-  // Spam bots fill the hidden honeypot field; people never see it.
-  if (form.elements._honey.value) return;
+  const data = new FormData(form);
 
-  submitButton.disabled = true;
-  formMessage.className = "form-message";
-  formMessage.textContent = "Sending your request…";
+  const name = data.get("name").trim();
 
-  try {
+  const body = [
+    `Name: ${name}`,
+    `Email: ${data.get("email")}`,
+    `Phone: ${data.get("phone").trim() || "Not provided"}`,
+    `Property City: ${data.get("location")}`,
+    `Service: ${data.get("service")}`,
+    "",
+    "What I've noticed:",
+    data.get("message")
+  ].join("\n");
 
-    const response = await fetch(FORM_ENDPOINT, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-      },
-      body: JSON.stringify(Object.fromEntries(new FormData(form)))
-    });
+  window.location.href =
+    `mailto:${BUSINESS_EMAIL}` +
+    `?subject=${encodeURIComponent("Bat Inspection Request - " + name)}` +
+    `&body=${encodeURIComponent(body)}`;
 
-    const result = await response.json();
-
-    if (!response.ok || String(result.success) !== "true") {
-      throw new Error(result.message || "Submission failed");
-    }
-
-    form.reset();
-    formMessage.classList.add("is-success");
-    formMessage.textContent =
-      "Thank you! Your request has been sent — we'll be in touch soon.";
-
-  } catch (error) {
-
-    formMessage.classList.add("is-error");
-    formMessage.textContent =
-      "Sorry, something went wrong. Please call 772-260-1417 or email americanbat@gmail.com.";
-
-  } finally {
-
-    submitButton.disabled = false;
-
-  }
+  formMessage.textContent =
+    "Your email app should open with your request ready — just hit Send. " +
+    "If it doesn't, email us at americanbat@gmail.com or call 772-260-1417.";
 
 });
 

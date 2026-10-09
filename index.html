@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css?v=6">
+<link rel="stylesheet" href="styles.css?v=7">
 </head>
 
 <body>
@@ -827,20 +827,11 @@
         </p>
 
         <!--
-          Submissions are delivered to americanbat@gmail.com through
-          FormSubmit (formsubmit.co). The first submission triggers an
-          activation email to that inbox that must be confirmed once.
+          Submitting opens the visitor's email app with a message to
+          americanbat@gmail.com pre-filled from the form (see script.js).
         -->
 
-        <form
-          id="inspectionForm"
-          action="https://formsubmit.co/americanbat@gmail.com"
-          method="POST"
-        >
-
-          <input type="hidden" name="_subject" value="New Bat Inspection Request — Website">
-          <input type="hidden" name="_template" value="table">
-          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <form id="inspectionForm">
 
           <div class="form-grid">
 
@@ -855,8 +846,8 @@
             </div>
 
             <div>
-              <label for="phone">Phone Number</label>
-              <input id="phone" type="tel" name="phone" autocomplete="tel" required>
+              <label for="phone">Phone Number <span class="optional">(optional)</span></label>
+              <input id="phone" type="tel" name="phone" autocomplete="tel">
             </div>
 
             <div>
@@ -1019,7 +1010,7 @@
 </footer>
 
 
-<script src="script.js?v=6"></script>
+<script src="script.js?v=7"></script>
 
 </body>
 </html>

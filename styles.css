@@ -1137,6 +1137,11 @@ ul {
   text-align: center;
 }
 
+.optional {
+  color: var(--muted);
+  font-weight: 500;
+}
+
 .form-message.is-success {
   padding: 12px;
   border-radius: 8px;
