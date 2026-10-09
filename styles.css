@@ -343,7 +343,7 @@ ul {
       rgba(126, 230, 226, .35) 66%,
       rgba(126, 230, 226, .02) 100%
     ),
-    url("images/residential.jpg") 70% center / cover no-repeat;
+    url("images/hero.jpg") right center / cover no-repeat;
 }
 
 .hero-inner {
@@ -833,6 +833,9 @@ ul {
 }
 
 .education-card > div {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 170px);
   padding: 20px 22px 24px;
 }
 
@@ -844,6 +847,45 @@ ul {
   margin: 8px 0 0;
   color: var(--muted);
   font-size: .87rem;
+}
+
+
+.edu-link {
+  align-self: flex-start;
+  margin-top: auto;
+  padding-top: 14px;
+  color: var(--blue-text);
+  font-size: .82rem;
+  font-weight: 800;
+}
+
+.edu-link:hover {
+  text-decoration: underline;
+}
+
+.resources {
+  margin-top: 26px;
+  padding: 18px 22px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  border-radius: var(--radius);
+  background: var(--gray);
+  font-size: .88rem;
+}
+
+.resources a {
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: white;
+  color: var(--blue-text);
+  font-weight: 700;
+}
+
+.resources a:hover {
+  border-color: var(--blue);
 }
 
 
@@ -1162,6 +1204,35 @@ ul {
   color: var(--yellow);
 }
 
+.social {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.social a {
+  padding: 8px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, .2);
+  border-radius: 999px;
+  color: white;
+  font-size: .84rem;
+  font-weight: 700;
+}
+
+.social a:hover {
+  border-color: var(--yellow);
+  color: var(--yellow);
+}
+
+.i-fill {
+  fill: currentColor;
+  stroke: none;
+}
+
 .copyright {
   padding-top: 22px;
   border-top: 1px solid rgba(255, 255, 255, .12);
@@ -1307,7 +1378,7 @@ ul {
     min-height: auto;
     background:
       linear-gradient(rgba(125, 227, 223, .93), rgba(125, 227, 223, .86)),
-      url("images/residential.jpg") center / cover no-repeat;
+      url("images/hero.jpg") center / cover no-repeat;
   }
 
   .hero-inner {
