@@ -9,7 +9,7 @@
 
 <meta
   name="description"
-  content="American Bat Removal specializes in humane bat exclusion, attic cleanup, inspections, and bat-proofing in Volusia County and surrounding Florida communities."
+  content="American Bat Removal specializes in humane bat exclusion, inspections, entry-point sealing, and bat-proofing in Volusia County and surrounding Florida communities."
 >
 
 <link rel="icon" type="image/png" href="images/favicon.png">
@@ -59,6 +59,9 @@
     </symbol>
     <symbol id="i-stain" viewBox="0 0 24 24">
       <path d="M12 2.8s6 6.2 6 11a6 6 0 0 1-12 0c0-4.8 6-11 6-11z"/>
+    </symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24">
+      <rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6.5 9 6.5 9-6.5"/>
     </symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24">
       <path d="M5 12h14M13 6l6 6-6 6"/>
@@ -174,8 +177,8 @@
       </h1>
 
       <p class="hero-lead">
-        Humane bat exclusion, attic cleanup, entry-point sealing, and
-        long-term prevention for your home or business. Serving Volusia
+        Humane bat exclusion, entry-point sealing, and long-term
+        prevention for your home or business. Serving Volusia
         County and surrounding areas.
       </p>
 
@@ -232,7 +235,7 @@
 
         <p>
           From inspecting your property and identifying entry points to
-          humane exclusion and cleanup, we provide solutions designed to
+          humane exclusion and sealing, we provide solutions designed to
           help keep bats out of your home.
         </p>
 
@@ -280,7 +283,7 @@
         <div>
           <h3>Focused Experience</h3>
           <p>
-            Specializing in bat-related inspections, exclusion, cleanup,
+            Specializing in bat-related inspections, exclusion, sealing,
             and prevention.
           </p>
         </div>
@@ -333,21 +336,6 @@
           <p>
             Identify and seal potential entry points to help prevent bats
             from getting back inside.
-          </p>
-          <a href="#contact" class="btn btn-yellow">
-            Learn More
-            <svg class="i"><use href="#i-arrow"/></svg>
-          </a>
-        </div>
-      </article>
-
-      <article class="service-card">
-        <img src="images/guano-attic.jpg" alt="Bat droppings accumulated in an attic" loading="lazy">
-        <div class="service-content">
-          <h3>Guano Cleanup &amp; Sanitization</h3>
-          <p>
-            Address bat droppings, contaminated insulation, and affected
-            attic materials when necessary.
           </p>
           <a href="#contact" class="btn btn-yellow">
             Learn More
@@ -410,10 +398,10 @@
 
       <div class="step">
         <div class="step-number">4</div>
-        <h3>Cleanup &amp; Prevention</h3>
+        <h3>Seal &amp; Prevent</h3>
         <p>
-          We address entry points and recommend appropriate cleanup and
-          prevention measures.
+          We seal the remaining entry points and recommend prevention
+          measures to help keep bats from returning.
         </p>
       </div>
 
@@ -532,7 +520,7 @@
 
       <p>
         Estimate fees are determined by distance from our office. Bat
-        removal and cleanup project costs are quoted separately after
+        removal project costs are quoted separately after
         assessing the property.
       </p>
 
@@ -786,7 +774,7 @@
           <summary>How much does bat removal cost?</summary>
           <p>
             Project pricing depends on the structure, entry points,
-            accessibility, exclusion requirements, and cleanup needs.
+            accessibility, and exclusion requirements.
           </p>
         </details>
 
@@ -801,13 +789,25 @@
 
       </div>
 
-      <a href="tel:+17722601417" class="call-card">
-        <span class="call-icon"><svg class="i"><use href="#i-phone"/></svg></span>
-        <div>
-          <strong>Prefer to talk?</strong>
-          <span>Call 772-260-1417 · Mon–Fri 8am–6pm</span>
-        </div>
-      </a>
+      <div class="contact-cards">
+
+        <a href="tel:+17722601417" class="call-card">
+          <span class="call-icon"><svg class="i"><use href="#i-phone"/></svg></span>
+          <div>
+            <strong>Prefer to talk?</strong>
+            <span>772-260-1417 · Mon–Fri 8am–6pm</span>
+          </div>
+        </a>
+
+        <a href="mailto:americanbat@gmail.com" class="call-card">
+          <span class="call-icon"><svg class="i"><use href="#i-mail"/></svg></span>
+          <div>
+            <strong>Email us</strong>
+            <span>americanbat@gmail.com</span>
+          </div>
+        </a>
+
+      </div>
 
     </div>
 
@@ -827,12 +827,20 @@
         </p>
 
         <!--
-          Submitting opens an email draft addressed to BUSINESS_EMAIL in
-          script.js. Set that address (or connect a form service) before
-          going live.
+          Submissions are delivered to americanbat@gmail.com through
+          FormSubmit (formsubmit.co). The first submission triggers an
+          activation email to that inbox that must be confirmed once.
         -->
 
-        <form id="inspectionForm">
+        <form
+          id="inspectionForm"
+          action="https://formsubmit.co/americanbat@gmail.com"
+          method="POST"
+        >
+
+          <input type="hidden" name="_subject" value="New Bat Inspection Request — Website">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
 
           <div class="form-grid">
 
@@ -864,7 +872,6 @@
             <option>Bat Inspection</option>
             <option>Bat Exclusion</option>
             <option>Entry-Point Sealing</option>
-            <option>Guano Cleanup</option>
             <option>Not Sure</option>
           </select>
 
@@ -938,10 +945,11 @@
         <img src="images/logo.png" alt="American Bat Removal" class="footer-logo">
         <p>
           Bat-only specialists providing humane exclusion, inspections,
-          cleanup, and long-term prevention.
+          entry-point sealing, and long-term prevention.
         </p>
         <p class="footer-contact">
           <a href="tel:+17722601417">772-260-1417</a><br>
+          <a href="mailto:americanbat@gmail.com">americanbat@gmail.com</a><br>
           Based in New Smyrna Beach, FL
         </p>
         <ul class="social">
@@ -982,7 +990,6 @@
         <ul>
           <li>Bat Exclusion</li>
           <li>Entry-Point Sealing</li>
-          <li>Guano Cleanup</li>
           <li>Bat Inspections</li>
           <li>Prevention</li>
         </ul>

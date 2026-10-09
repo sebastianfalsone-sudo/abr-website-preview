@@ -33,11 +33,11 @@ navLinks.querySelectorAll("a").forEach(link => {
 
 
 /* ==========================================================
-   INSPECTION FORM → EMAIL DRAFT
-   Set BUSINESS_EMAIL (or connect a form service) before launch.
+   INSPECTION FORM → americanbat@gmail.com (via FormSubmit)
 ========================================================== */
 
-const BUSINESS_EMAIL = "REPLACE_WITH_BUSINESS_EMAIL";
+const FORM_ENDPOINT =
+  "https://formsubmit.co/ajax/americanbat@gmail.com";
 
 const form =
   document.getElementById("inspectionForm");
@@ -45,37 +45,54 @@ const form =
 const formMessage =
   document.getElementById("formMessage");
 
+const submitButton =
+  form.querySelector('button[type="submit"]');
 
-form.addEventListener("submit", event => {
+
+form.addEventListener("submit", async event => {
 
   event.preventDefault();
 
-  if (BUSINESS_EMAIL.startsWith("REPLACE_")) {
+  // Spam bots fill the hidden honeypot field; people never see it.
+  if (form.elements._honey.value) return;
+
+  submitButton.disabled = true;
+  formMessage.className = "form-message";
+  formMessage.textContent = "Sending your request…";
+
+  try {
+
+    const response = await fetch(FORM_ENDPOINT, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(Object.fromEntries(new FormData(form)))
+    });
+
+    const result = await response.json();
+
+    if (!response.ok || String(result.success) !== "true") {
+      throw new Error(result.message || "Submission failed");
+    }
+
+    form.reset();
+    formMessage.classList.add("is-success");
     formMessage.textContent =
-      "Online requests aren't set up yet — please call 772-260-1417.";
-    return;
+      "Thank you! Your request has been sent — we'll be in touch soon.";
+
+  } catch (error) {
+
+    formMessage.classList.add("is-error");
+    formMessage.textContent =
+      "Sorry, something went wrong. Please call 772-260-1417 or email americanbat@gmail.com.";
+
+  } finally {
+
+    submitButton.disabled = false;
+
   }
-
-  const data = new FormData(form);
-
-  const body = [
-    `Name: ${data.get("name")}`,
-    `Email: ${data.get("email")}`,
-    `Phone: ${data.get("phone")}`,
-    `Property City: ${data.get("location")}`,
-    `Service: ${data.get("service")}`,
-    "",
-    "What I've noticed:",
-    data.get("message")
-  ].join("\n");
-
-  window.location.href =
-    `mailto:${BUSINESS_EMAIL}` +
-    `?subject=${encodeURIComponent("Bat Inspection Request - " + data.get("name"))}` +
-    `&body=${encodeURIComponent(body)}`;
-
-  formMessage.textContent =
-    "Your email app should open with the request ready to send.";
 
 });
 

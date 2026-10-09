@@ -508,7 +508,7 @@ ul {
 .services-grid {
   margin-top: 36px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 22px;
 }
 
@@ -529,7 +529,7 @@ ul {
 
 .service-card img {
   width: 100%;
-  height: 215px;
+  height: 280px;
   object-fit: cover;
 }
 
@@ -1025,8 +1025,13 @@ ul {
   font-size: .9rem;
 }
 
-.call-card {
+.contact-cards {
   margin-top: 24px;
+  display: grid;
+  gap: 12px;
+}
+
+.call-card {
   padding: 18px 20px;
   display: flex;
   align-items: center;
@@ -1128,8 +1133,38 @@ ul {
 .form-message {
   margin: 12px 0 0;
   color: var(--muted);
-  font-size: .85rem;
+  font-size: .88rem;
   text-align: center;
+}
+
+.form-message.is-success {
+  padding: 12px;
+  border-radius: 8px;
+  background: #e3f8ec;
+  color: #11603a;
+  font-weight: 700;
+}
+
+.form-message.is-error {
+  padding: 12px;
+  border-radius: 8px;
+  background: #fde8e8;
+  color: #9b1c1c;
+  font-weight: 700;
+}
+
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.btn:disabled {
+  opacity: .6;
+  cursor: wait;
+  transform: none;
 }
 
 
@@ -1280,7 +1315,6 @@ ul {
     gap: 18px;
   }
 
-  .services-grid,
   .intro-benefits {
     grid-template-columns: repeat(2, 1fr);
   }
