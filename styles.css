@@ -1,28 +1,39 @@
 /* ==========================================================
    AMERICAN BAT REMOVAL
-   Turquoise / yellow / navy
+   Logo palette — golden yellow / cyan / black
 ========================================================== */
 
 :root {
-  --turquoise: #7de3df;
-  --turquoise-soft: #c8f5f3;
-  --blue: #00b7ed;
-  --blue-text: #0090c2;
-  --yellow: #ffdc00;
-  --yellow-soft: #fff3b0;
-  --navy: #062b3b;
-  --navy-2: #08374a;
-  --dark: #061d29;
+  /* Logo colors */
+  --yellow: #fcc700;
+  --yellow-hover: #ffd633;
+  --yellow-soft: #fff6d1;
+  --cyan: #03c4fa;
+  --cyan-text: #0078a8;
+  --cyan-soft: #e1f6fd;
+  --black: #0b0b0c;
+  --charcoal: #141518;
+  --charcoal-2: #1d1f23;
+
+  /* Legacy aliases used throughout this stylesheet */
+  --turquoise: var(--cyan);
+  --turquoise-soft: var(--cyan-soft);
+  --blue: var(--cyan);
+  --blue-text: var(--cyan-text);
+  --navy: var(--charcoal);
+  --navy-2: var(--charcoal-2);
+  --dark: var(--black);
+
   --white: #ffffff;
-  --gray: #f4f8f9;
-  --text: #14232b;
-  --muted: #53636b;
-  --line: #dfe8eb;
+  --gray: #f5f6f7;
+  --text: #111214;
+  --muted: #565c62;
+  --line: #e4e6e8;
 
   --header-h: 90px;
   --radius: 10px;
-  --shadow-sm: 0 5px 18px rgba(6, 29, 41, .06);
-  --shadow: 0 14px 38px rgba(6, 29, 41, .1);
+  --shadow-sm: 0 5px 18px rgba(17, 18, 20, .06);
+  --shadow: 0 14px 38px rgba(17, 18, 20, .1);
 }
 
 
@@ -166,11 +177,11 @@ ul {
 .btn-yellow {
   background: var(--yellow);
   color: var(--dark);
-  box-shadow: 0 6px 18px rgba(255, 220, 0, .3);
+  box-shadow: 0 6px 18px rgba(252, 199, 0, .3);
 }
 
 .btn-yellow:hover {
-  background: #ffe74d;
+  background: var(--yellow-hover);
 }
 
 .btn-outline {
@@ -337,7 +348,8 @@ ul {
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: linear-gradient(120deg, #8eeae6 0%, var(--turquoise) 60%);
+  background: var(--black);
+  color: #fff;
 }
 
 .hero-photo {
@@ -368,20 +380,21 @@ ul {
 }
 
 .hero .label {
-  color: var(--dark);
+  color: var(--yellow);
 }
 
 .hero h1 {
   margin: 8px 0 20px;
-  color: var(--dark);
+  color: #fff;
 }
 
 .hero h1 .blue {
-  color: #007fae;
+  color: var(--cyan);
 }
 
 .hero-lead {
   max-width: 530px;
+  color: rgba(255, 255, 255, .82);
   font-size: 1.1rem;
   font-weight: 500;
 }
@@ -437,7 +450,7 @@ ul {
   position: absolute;
   inset: 18px -18px -18px 18px;
   border-radius: 12px;
-  background: var(--turquoise);
+  background: var(--yellow);
 }
 
 .intro-photo img {
@@ -524,7 +537,7 @@ ul {
 
 .service-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(125, 227, 223, .5);
+  border-color: rgba(252, 199, 0, .5);
 }
 
 .service-card img {
@@ -542,7 +555,7 @@ ul {
 
 .service-content p {
   margin-bottom: 22px;
-  color: #c9dae1;
+  color: #c5c8cd;
   font-size: .92rem;
 }
 
@@ -580,7 +593,7 @@ ul {
   font-family: "Barlow Condensed", sans-serif;
   font-size: 1.7rem;
   font-weight: 900;
-  box-shadow: 0 0 0 8px #fff7c7;
+  box-shadow: 0 0 0 8px #fff1bd;
 }
 
 .step:not(:last-child)::after {
@@ -589,7 +602,7 @@ ul {
   top: 29px;
   left: 78px;
   right: -16px;
-  border-top: 2px dashed #b9cfd4;
+  border-top: 2px dashed #cfd3d7;
 }
 
 .step h3 {
@@ -666,7 +679,7 @@ ul {
   height: 26px;
   padding: 5px;
   border-radius: 50%;
-  background: rgba(255, 220, 0, .15);
+  background: rgba(252, 199, 0, .15);
   color: var(--yellow);
 }
 
@@ -719,7 +732,7 @@ ul {
 ========================================================== */
 
 .pricing {
-  background: linear-gradient(135deg, #b9f3f1, #e6ffff);
+  background: linear-gradient(135deg, #fff4c2, #fffcf0);
 }
 
 .pricing-head {
@@ -740,7 +753,7 @@ ul {
 .price-card {
   position: relative;
   padding: 34px 16px 26px;
-  border: 1px solid #b7e8e8;
+  border: 1px solid #f0dd94;
   border-top: 5px solid var(--yellow);
   border-radius: var(--radius);
   background: rgba(255, 255, 255, .9);
@@ -786,7 +799,7 @@ ul {
 }
 
 .featured .price {
-  color: var(--turquoise);
+  color: var(--yellow);
 }
 
 .price-card p {
@@ -952,7 +965,7 @@ ul {
 .safety-note {
   margin-top: 24px;
   padding: 17px 22px;
-  border-left: 5px solid #efbf00;
+  border-left: 5px solid #e0b000;
   border-radius: 8px;
   background: var(--yellow-soft);
   font-size: .9rem;
@@ -964,7 +977,7 @@ ul {
 ========================================================== */
 
 .faq-contact {
-  background: #f7fafb;
+  background: #f6f7f8;
 }
 
 .faq-contact-grid {
@@ -1073,7 +1086,7 @@ ul {
 
 .contact-form {
   padding: 34px;
-  border-top: 6px solid var(--turquoise);
+  border-top: 6px solid var(--yellow);
   border-radius: 12px;
   background: white;
   box-shadow: var(--shadow);
@@ -1110,7 +1123,7 @@ ul {
   width: 100%;
   margin-bottom: 16px;
   padding: 13px 14px;
-  border: 1px solid #ccdadf;
+  border: 1px solid #d3d7db;
   border-radius: 7px;
   background: white;
   color: var(--text);
@@ -1121,7 +1134,7 @@ ul {
 .contact-form input:focus,
 .contact-form select:focus,
 .contact-form textarea:focus {
-  outline: 3px solid rgba(0, 183, 237, .2);
+  outline: 3px solid rgba(3, 196, 250, .25);
   border-color: var(--blue);
 }
 
@@ -1172,7 +1185,7 @@ ul {
 .final-cta {
   padding: 88px 0;
   background:
-    linear-gradient(rgba(6, 43, 59, .82), rgba(6, 43, 59, .88)),
+    linear-gradient(rgba(11, 11, 12, .8), rgba(11, 11, 12, .88)),
     url("images/crew-rooftop.jpg") center / cover no-repeat;
   color: white;
   text-align: center;
@@ -1224,7 +1237,7 @@ ul {
 }
 
 .footer p {
-  color: #b6c8cf;
+  color: #b4b8be;
   font-size: .88rem;
 }
 
@@ -1241,7 +1254,7 @@ ul {
 
 .footer li {
   margin-bottom: 9px;
-  color: #b6c8cf;
+  color: #b4b8be;
   font-size: .88rem;
 }
 
@@ -1297,7 +1310,7 @@ ul {
 .copyright {
   padding-top: 22px;
   border-top: 1px solid rgba(255, 255, 255, .12);
-  color: #8fa6ae;
+  color: #8d9399;
   font-size: .78rem;
 }
 
@@ -1504,6 +1517,327 @@ ul {
 
   .menu-button {
     margin-left: auto;
+  }
+
+}
+
+
+/* ==========================================================
+   INTRO BENEFIT CARDS — hover + FWC link
+========================================================== */
+
+.benefit {
+  position: relative;
+  overflow: hidden;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
+}
+
+.benefit::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: var(--yellow);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .3s ease;
+}
+
+.benefit:hover {
+  transform: translateY(-5px);
+  border-color: var(--yellow);
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.benefit:hover::after {
+  transform: scaleX(1);
+}
+
+.benefit-icon {
+  transition: background .25s ease, color .25s ease, transform .25s ease;
+}
+
+.benefit:hover .benefit-icon {
+  background: var(--black);
+  color: var(--yellow);
+  transform: scale(1.06);
+}
+
+.benefit strong {
+  color: var(--text);
+}
+
+.benefit-link {
+  margin-top: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--cyan-text);
+  font-size: .82rem;
+  font-weight: 800;
+}
+
+.benefit-link .i {
+  width: 14px;
+  height: 14px;
+}
+
+.benefit-link:hover {
+  text-decoration: underline;
+}
+
+
+/* ==========================================================
+   PRICING — three tiers
+========================================================== */
+
+.pricing-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.pricing-map-link {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.pricing-map-link a {
+  color: var(--cyan-text);
+  font-weight: 800;
+}
+
+.pricing-map-link a:hover {
+  text-decoration: underline;
+}
+
+
+/* ==========================================================
+   WARNING SIGNS — five cards
+========================================================== */
+
+.signs-grid {
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.sign-card {
+  padding: 24px 22px;
+}
+
+
+/* ==========================================================
+   SERVICE AREA MAP (expandable)
+========================================================== */
+
+.map-toggle {
+  margin-top: 48px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.map-toggle summary {
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  list-style: none;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+
+.map-toggle summary::-webkit-details-marker {
+  display: none;
+}
+
+.map-toggle summary:hover {
+  background: var(--yellow-soft);
+}
+
+.map-toggle-icon {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--black);
+  color: var(--yellow);
+}
+
+.map-toggle-icon .i {
+  width: 24px;
+  height: 24px;
+}
+
+.map-toggle-text {
+  flex: 1;
+}
+
+.map-toggle-text strong {
+  display: block;
+  font-size: 1.02rem;
+}
+
+.map-toggle-text span {
+  color: var(--muted);
+  font-size: .88rem;
+}
+
+.map-toggle-chevron {
+  width: 26px;
+  height: 26px;
+  padding: 4px;
+  border-radius: 50%;
+  background: var(--yellow);
+  transition: transform .25s ease;
+}
+
+.map-toggle[open] .map-toggle-chevron {
+  transform: rotate(180deg);
+}
+
+.map-toggle[open] summary {
+  border-bottom: 1px solid var(--line);
+}
+
+.map-panel {
+  padding: 26px;
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 32px;
+  align-items: start;
+  animation: mapReveal .35s ease;
+}
+
+@keyframes mapReveal {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: none; }
+}
+
+.map-image img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.map-legend h3 {
+  font-size: 1.7rem;
+}
+
+.map-legend > p {
+  margin: 6px 0 18px;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.zone {
+  margin-bottom: 12px;
+  padding: 16px;
+  display: flex;
+  gap: 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.zone-swatch {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 auto;
+  margin-top: 2px;
+  border-radius: 6px;
+}
+
+.zone-1 .zone-swatch {
+  background: rgba(252, 199, 0, .55);
+  border: 2px dashed #c99a00;
+}
+
+.zone-2 .zone-swatch {
+  background: rgba(3, 196, 250, .22);
+  border: 2px dashed #0087b8;
+}
+
+.zone-3 .zone-swatch {
+  background: #fbfaf6;
+  border: 2px solid #9fb8c2;
+}
+
+.zone > div {
+  flex: 1;
+}
+
+.zone-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.zone-head span {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 900;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.zone p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: .82rem;
+  line-height: 1.5;
+}
+
+.map-note {
+  margin: 14px 0 18px;
+  color: var(--muted);
+  font-size: .8rem;
+}
+
+
+/* ==========================================================
+   NEW COMPONENTS — RESPONSIVE
+========================================================== */
+
+@media (max-width: 1080px) {
+
+  .signs-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+@media (max-width: 950px) {
+
+  .map-panel {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .pricing-grid,
+  .signs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .map-panel {
+    padding: 18px;
+  }
+
+  .map-toggle summary {
+    padding: 16px;
+  }
+
+  .map-legend .btn {
+    width: 100%;
   }
 
 }

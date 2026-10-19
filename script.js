@@ -83,3 +83,21 @@ form.addEventListener("submit", event => {
 
 document.getElementById("year").textContent =
   new Date().getFullYear();
+
+
+/* ==========================================================
+   SERVICE AREA MAP — open from "View the service area map" links
+========================================================== */
+
+const serviceMap =
+  document.getElementById("service-map");
+
+document.querySelectorAll("[data-open-map]").forEach(link => {
+
+  link.addEventListener("click", () => {
+
+    if (serviceMap) serviceMap.open = true;
+
+  });
+
+});

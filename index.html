@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css?v=7">
+<link rel="stylesheet" href="styles.css?v=8">
 </head>
 
 <body>
@@ -62,6 +62,18 @@
     </symbol>
     <symbol id="i-mail" viewBox="0 0 24 24">
       <rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6.5 9 6.5 9-6.5"/>
+    </symbol>
+    <symbol id="i-wind" viewBox="0 0 24 24">
+      <path d="M3 8h10.5a3 3 0 1 0-3-3M3 12h15.5a3 3 0 1 1-3 3M3 16h7"/>
+    </symbol>
+    <symbol id="i-map" viewBox="0 0 24 24">
+      <path d="m9 4-5.5 2v14L9 18l6 2 5.5-2V4L15 6z"/><path d="M9 4v14M15 6v14"/>
+    </symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24">
+      <path d="m6 9 6 6 6-6"/>
+    </symbol>
+    <symbol id="i-external" viewBox="0 0 24 24">
+      <path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>
     </symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24">
       <path d="M5 12h14M13 6l6 6-6 6"/>
@@ -189,7 +201,7 @@
           <svg class="i"><use href="#i-arrow"/></svg>
         </a>
 
-        <a href="#services" class="btn btn-outline btn-lg">
+        <a href="#services" class="btn btn-outline-light btn-lg">
           View Our Services
         </a>
 
@@ -260,10 +272,14 @@
         <div>
           <h3>Florida's Bat Season</h3>
           <p>
-            Routine exclusion is restricted April 16 through August 14.
-            Special authorization is required for exclusion during this
-            period.
+            A special permit is required for operation from
+            <strong>April 16 to August 14</strong>, Florida's bat
+            maternity season.
           </p>
+          <a class="benefit-link" href="https://myfwc.com/conservation/you-conserve/wildlife/bats/#exclusion" target="_blank" rel="noopener">
+            FWC maternity season guidance
+            <svg class="i"><use href="#i-external"/></svg>
+          </a>
         </div>
       </div>
 
@@ -498,6 +514,73 @@
 
   </div>
 
+
+  <div class="container">
+
+    <details class="map-toggle" id="service-map">
+
+      <summary>
+        <span class="map-toggle-icon"><svg class="i"><use href="#i-map"/></svg></span>
+        <span class="map-toggle-text">
+          <strong>View our service area map</strong>
+          <span>See which estimate zone your property falls in</span>
+        </span>
+        <svg class="i map-toggle-chevron"><use href="#i-chevron"/></svg>
+      </summary>
+
+      <div class="map-panel">
+
+        <div class="map-image">
+          <img src="images/service-area-map.svg" alt="Map of Florida showing American Bat Removal estimate zones around New Smyrna Beach: free within 50 miles, $75 from 51 to 100 miles, and $100 plus $0.50 per mile beyond 100 miles" loading="lazy">
+        </div>
+
+        <div class="map-legend">
+
+          <h3>Estimate zones</h3>
+          <p>Measured from our New Smyrna Beach office.</p>
+
+          <div class="zone zone-1">
+            <span class="zone-swatch"></span>
+            <div>
+              <div class="zone-head"><strong>0–50 miles</strong><span>Free</span></div>
+              <p>Daytona Beach, Port Orange, Ormond Beach, DeLand, Sanford, Titusville, Palm Coast, Orlando</p>
+            </div>
+          </div>
+
+          <div class="zone zone-2">
+            <span class="zone-swatch"></span>
+            <div>
+              <div class="zone-head"><strong>51–100 miles</strong><span>$75</span></div>
+              <p>Kissimmee, St. Augustine, Melbourne, Palm Bay, Ocala, Sebastian, Lakeland, Gainesville</p>
+            </div>
+          </div>
+
+          <div class="zone zone-3">
+            <span class="zone-swatch"></span>
+            <div>
+              <div class="zone-head"><strong>101+ miles</strong><span>$100 + $0.50/mi</span></div>
+              <p>Jacksonville, Vero Beach, Fort Pierce, Tampa, Port St. Lucie, Stuart, West Palm Beach</p>
+            </div>
+          </div>
+
+          <p class="map-note">
+            Rings show approximate straight-line distance. Your estimate fee
+            is confirmed by actual travel distance when you schedule.
+          </p>
+
+          <a href="#contact" class="btn btn-yellow">
+            Request an Inspection
+            <svg class="i"><use href="#i-arrow"/></svg>
+          </a>
+
+        </div>
+
+      </div>
+
+    </details>
+
+  </div>
+
 </section>
 
 
@@ -531,30 +614,30 @@
 
       <div class="price-card featured">
         <span class="badge">Most Common</span>
-        <h3>0–45 Miles</h3>
+        <h3>0–50 Miles</h3>
         <div class="price">Free</div>
         <p>Estimate</p>
       </div>
 
       <div class="price-card">
-        <h3>46–90 Miles</h3>
+        <h3>51–100 Miles</h3>
         <div class="price">$75</div>
         <p>Estimate</p>
       </div>
 
       <div class="price-card">
-        <h3>91–100 Miles</h3>
+        <h3>101+ Miles</h3>
         <div class="price">$100</div>
-        <p>Estimate</p>
-      </div>
-
-      <div class="price-card">
-        <h3>Over 100 Miles</h3>
-        <div class="price">$100</div>
-        <p>Plus $1 per mile beyond 100 miles</p>
+        <p>Plus $0.50 per mile beyond 100 miles</p>
       </div>
 
     </div>
+
+
+    <p class="pricing-map-link">
+      Not sure of your distance?
+      <a href="#service-map" data-open-map>View the service area map</a>
+    </p>
 
 
     <div class="price-notice">
@@ -712,6 +795,15 @@
         </p>
       </div>
 
+      <div class="sign-card">
+        <span class="sign-icon"><svg class="i"><use href="#i-wind"/></svg></span>
+        <h3>Musky Odor</h3>
+        <p>
+          A strong, ammonia-like smell near the attic or walls, coming
+          from the bats and their droppings.
+        </p>
+      </div>
+
     </div>
 
 
@@ -757,9 +849,9 @@
         <details>
           <summary>Can bats be removed year-round?</summary>
           <p>
-            Florida restricts routine bat exclusion during maternity
-            season, April 16 through August 14. Exclusion during this
-            period requires applicable authorization.
+            Florida protects bats during maternity season, April 16
+            through August 14. A special permit is required for exclusion
+            work during that period.
           </p>
         </details>
 
@@ -1010,7 +1102,7 @@
 </footer>
 
 
-<script src="script.js?v=7"></script>
+<script src="script.js?v=8"></script>
 
 </body>
 </html>
