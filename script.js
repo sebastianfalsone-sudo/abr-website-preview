@@ -60,6 +60,7 @@ form.addEventListener("submit", event => {
     `Phone: ${data.get("phone").trim() || "Not provided"}`,
     `Property City: ${data.get("location")}`,
     `Service: ${data.get("service")}`,
+    `Estimate Zone: ${data.get("zone") || "Not selected"}`,
     "",
     "What I've noticed:",
     data.get("message")
@@ -101,3 +102,28 @@ document.querySelectorAll("[data-open-map]").forEach(link => {
   });
 
 });
+
+
+/* ==========================================================
+   ESTIMATE ZONE CTAs — carry the chosen zone into the form
+========================================================== */
+
+const zoneField = document.getElementById("zoneField");
+const zoneChip = document.getElementById("zoneChip");
+const zoneChipText = document.getElementById("zoneChipText");
+
+function setZone(zone) {
+
+  zoneField.value = zone;
+  zoneChipText.textContent = zone;
+  zoneChip.classList.toggle("is-visible", Boolean(zone));
+
+}
+
+document.querySelectorAll("[data-zone]").forEach(link => {
+
+  link.addEventListener("click", () => setZone(link.dataset.zone));
+
+});
+
+document.getElementById("zoneClear").addEventListener("click", () => setZone(""));

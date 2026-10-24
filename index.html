@@ -16,9 +16,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css?v=10">
+<link rel="stylesheet" href="styles.css?v=11">
 </head>
 
 <body>
@@ -561,6 +561,7 @@
               <div class="zone-head"><strong>Local Zone</strong><span>Free</span></div>
               <div class="zone-range">0–50 miles</div>
               <p>Daytona Beach, Port Orange, Ormond Beach, DeLand, Sanford, Titusville, Palm Coast, Orlando</p>
+              <a href="#contact" class="zone-cta" data-zone="Local Zone (0–50 miles) — Free estimate">Book a free estimate <svg class="i"><use href="#i-arrow"/></svg></a>
             </div>
           </div>
 
@@ -570,6 +571,7 @@
               <div class="zone-head"><strong>Extended Zone</strong><span>$75</span></div>
               <div class="zone-range">51–100 miles</div>
               <p>Kissimmee, St. Augustine, Melbourne, Palm Bay, Ocala, Sebastian, Lakeland, Gainesville</p>
+              <a href="#contact" class="zone-cta" data-zone="Extended Zone (51–100 miles) — $75 estimate">Request an estimate <svg class="i"><use href="#i-arrow"/></svg></a>
             </div>
           </div>
 
@@ -579,6 +581,7 @@
               <div class="zone-head"><strong>Long Distance Zone</strong><span>$100 + $0.50/mi</span></div>
               <div class="zone-range">101+ miles</div>
               <p>Jacksonville, Vero Beach, Fort Pierce, Tampa, Port St. Lucie, Stuart, West Palm Beach</p>
+              <a href="#contact" class="zone-cta" data-zone="Long Distance Zone (101+ miles) — $100 + $0.50/mile estimate">Request an estimate <svg class="i"><use href="#i-arrow"/></svg></a>
             </div>
           </div>
 
@@ -586,11 +589,6 @@
             Rings show approximate straight-line distance. Your estimate fee
             is confirmed by actual travel distance when you schedule.
           </p>
-
-          <a href="#contact" class="btn btn-yellow">
-            Request an Inspection
-            <svg class="i"><use href="#i-arrow"/></svg>
-          </a>
 
         </div>
 
@@ -631,12 +629,15 @@
 
     <div class="pricing-grid">
 
-      <div class="price-card featured">
-        <span class="badge">Most Common</span>
+      <div class="price-card">
         <div class="zone-name">Local Zone</div>
         <h3>0–50 Miles</h3>
         <div class="price">Free</div>
         <p>Estimate</p>
+        <a href="#contact" class="btn btn-yellow price-cta" data-zone="Local Zone (0–50 miles) — Free estimate">
+          Book a Free Estimate
+          <svg class="i"><use href="#i-arrow"/></svg>
+        </a>
       </div>
 
       <div class="price-card">
@@ -644,6 +645,10 @@
         <h3>51–100 Miles</h3>
         <div class="price">$75</div>
         <p>Estimate</p>
+        <a href="#contact" class="btn btn-yellow price-cta" data-zone="Extended Zone (51–100 miles) — $75 estimate">
+          Request an Estimate
+          <svg class="i"><use href="#i-arrow"/></svg>
+        </a>
       </div>
 
       <div class="price-card">
@@ -651,6 +656,10 @@
         <h3>101+ Miles</h3>
         <div class="price">$100</div>
         <p>Plus $0.50 per mile beyond 100 miles</p>
+        <a href="#contact" class="btn btn-yellow price-cta" data-zone="Long Distance Zone (101+ miles) — $100 + $0.50/mile estimate">
+          Request an Estimate
+          <svg class="i"><use href="#i-arrow"/></svg>
+        </a>
       </div>
 
     </div>
@@ -947,6 +956,13 @@
 
         <form id="inspectionForm">
 
+          <input type="hidden" name="zone" id="zoneField">
+
+          <div class="zone-chip" id="zoneChip" role="status">
+            <span>Estimate zone: <strong id="zoneChipText"></strong></span>
+            <button type="button" id="zoneClear">Clear</button>
+          </div>
+
           <div class="form-grid">
 
             <div>
@@ -1124,7 +1140,7 @@
 </footer>
 
 
-<script src="script.js?v=9"></script>
+<script src="script.js?v=10"></script>
 
 </body>
 </html>

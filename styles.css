@@ -9,7 +9,9 @@
   --yellow-hover: #ffd633;
   --yellow-soft: #fff6d1;
   --cyan: #03c4fa;
-  --cyan-text: #0078a8;
+  --cyan-text: #03c4fa;
+  --font-heading: "Plus Jakarta Sans", Inter, system-ui, sans-serif;
+  --font-body: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
   --cyan-soft: #e1f6fd;
   --black: #0b0b0c;
   --charcoal: #141518;
@@ -69,7 +71,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "Barlow Condensed", Impact, sans-serif;
+  font-family: var(--font-heading);
   font-weight: 900;
   line-height: 1.04;
   letter-spacing: .005em;
@@ -561,7 +563,7 @@ ul {
   place-items: center;
   border-radius: 50%;
   background: var(--yellow);
-  font-family: "Barlow Condensed", sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.7rem;
   font-weight: 900;
   box-shadow: 0 0 0 8px #fff1bd;
@@ -616,7 +618,7 @@ ul {
 
 .experience-number {
   color: var(--yellow);
-  font-family: "Barlow Condensed", sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(3.8rem, 7vw, 5.2rem);
   font-weight: 900;
   line-height: 1;
@@ -762,7 +764,7 @@ ul {
 .price {
   margin-top: 8px;
   color: var(--blue-text);
-  font-family: "Barlow Condensed", sans-serif;
+  font-family: var(--font-heading);
   font-size: 3.6rem;
   font-weight: 900;
   line-height: 1.1;
@@ -1748,7 +1750,7 @@ ul {
 }
 
 .zone-head span {
-  font-family: "Barlow Condensed", sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.25rem;
   font-weight: 900;
   line-height: 1.1;
@@ -2016,4 +2018,163 @@ ul {
     padding-top: 56px;
   }
 
+}
+
+
+/* ==========================================================
+   TYPOGRAPHY — Plus Jakarta Sans headings + Inter body
+========================================================== */
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+}
+
+h1 {
+  font-size: clamp(2.7rem, 5.4vw, 4.4rem);
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  font-size: clamp(1.95rem, 3.5vw, 2.8rem);
+}
+
+h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.benefit h3,
+.step h3,
+.education-card h3,
+.sign-card h3 {
+  font-size: 1.12rem;
+  letter-spacing: -0.015em;
+}
+
+.service-content h3 {
+  font-size: 1.35rem;
+}
+
+.price-card h3 {
+  font-size: 1.15rem;
+}
+
+.contact-form h2 {
+  font-size: clamp(1.7rem, 2.8vw, 2.2rem);
+}
+
+.footer h3 {
+  font-size: 1.05rem;
+  letter-spacing: 0;
+}
+
+.map-legend h3 {
+  font-size: 1.4rem;
+}
+
+.price {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  text-transform: none;
+}
+
+.experience-number {
+  font-size: clamp(3rem, 5.6vw, 4.2rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+.step-number {
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.zone-head span {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.label,
+.eyebrow {
+  font-weight: 800;
+}
+
+
+/* ==========================================================
+   ESTIMATE ZONE CARDS — equal styling + CTA
+========================================================== */
+
+.price-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 22px 26px;
+}
+
+.price-card > p {
+  margin-bottom: 0;
+}
+
+.price-cta {
+  margin-top: 22px;
+  width: 100%;
+}
+
+.price-card .zone-name {
+  color: var(--cyan-text);
+}
+
+.zone-cta {
+  margin-top: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text);
+  font-size: .82rem;
+  font-weight: 800;
+  border-bottom: 2px solid var(--yellow);
+}
+
+.zone-cta:hover {
+  border-bottom-color: var(--cyan);
+}
+
+.zone-cta .i {
+  width: 14px;
+  height: 14px;
+}
+
+.zone-chip {
+  margin: 0 0 16px;
+  padding: 10px 14px;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border: 1px solid #f0dd94;
+  border-radius: 8px;
+  background: var(--yellow-soft);
+  font-size: .86rem;
+}
+
+.zone-chip.is-visible {
+  display: flex;
+}
+
+.zone-chip button {
+  border: 0;
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: .8rem;
+  text-decoration: underline;
+  cursor: pointer;
 }
