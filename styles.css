@@ -2430,3 +2430,102 @@ h3 {
 .powered-by:hover strong {
   color: var(--yellow);
 }
+
+
+/* ==========================================================
+   WHOLE-CARD LINKS (services, bat season, inspection zones)
+   The card's link stretches over the entire card.
+========================================================== */
+
+.service-card,
+.benefit,
+.price-card {
+  position: relative;
+}
+
+.service-card .service-content .btn::after,
+.benefit .benefit-link::after,
+.price-card .price-cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.service-card .service-content .btn,
+.service-card .service-content .btn:hover,
+.price-card .price-cta,
+.price-card .price-cta:hover {
+  transform: none;
+}
+
+.service-card,
+.price-card {
+  cursor: pointer;
+}
+
+.service-card:hover .btn-yellow {
+  background: var(--yellow-hover);
+}
+
+.price-card:hover .price-cta {
+  background: var(--charcoal-2);
+}
+
+
+/* ==========================================================
+   BAT REMOVAL EXPERTS — logo-blue cards
+========================================================== */
+
+.benefit {
+  border: 0;
+  background: var(--cyan);
+  color: var(--black);
+  box-shadow: 0 10px 28px rgba(3, 196, 250, .25);
+}
+
+.benefit h3 {
+  color: var(--black);
+}
+
+.benefit p {
+  color: rgba(11, 11, 12, .78);
+}
+
+.benefit strong {
+  color: var(--black);
+}
+
+.benefit-icon {
+  background: var(--black);
+  color: var(--yellow);
+}
+
+.benefit:hover {
+  border: 0;
+  background: #19cbfb;
+  box-shadow: 0 18px 40px rgba(3, 196, 250, .38);
+}
+
+.benefit:hover .benefit-icon {
+  background: var(--yellow);
+  color: var(--black);
+}
+
+.benefit::after {
+  background: var(--black);
+}
+
+.benefit-link {
+  color: var(--black);
+  border-bottom: 2px solid var(--black);
+  padding-bottom: 1px;
+}
+
+.benefit-link:hover {
+  text-decoration: none;
+}
+
+.benefit:has(.benefit-link) {
+  cursor: pointer;
+}
