@@ -166,12 +166,12 @@ document.querySelectorAll(".voice-note").forEach(note => {
 
   audio.addEventListener("play", () => {
     note.classList.add("is-playing");
-    button.setAttribute("aria-label", "Pause bat roost sounds");
+    button.setAttribute("aria-label", "Pause bat attic sounds");
   });
 
   audio.addEventListener("pause", () => {
     note.classList.remove("is-playing");
-    button.setAttribute("aria-label", "Play bat roost sounds");
+    button.setAttribute("aria-label", "Play bat attic sounds");
   });
 
   audio.addEventListener("timeupdate", paint);
