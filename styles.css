@@ -2178,3 +2178,22 @@ h3 {
   text-decoration: underline;
   cursor: pointer;
 }
+
+
+/* ==========================================================
+   ESTIMATE ZONE CTA — black button
+========================================================== */
+
+.btn-dark {
+  background: var(--black);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(11, 11, 12, .22);
+}
+
+.btn-dark .i {
+  color: var(--yellow);
+}
+
+.btn-dark:hover {
+  background: var(--charcoal-2);
+}
