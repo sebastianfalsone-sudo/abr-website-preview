@@ -60,7 +60,7 @@ form.addEventListener("submit", event => {
     `Phone: ${data.get("phone").trim() || "Not provided"}`,
     `Property City: ${data.get("location")}`,
     `Service: ${data.get("service")}`,
-    `Estimate Zone: ${data.get("zone") || "Not selected"}`,
+    `Inspection Zone: ${data.get("zone") || "Not selected"}`,
     "",
     "What I've noticed:",
     data.get("message")
@@ -127,3 +127,59 @@ document.querySelectorAll("[data-zone]").forEach(link => {
 });
 
 document.getElementById("zoneClear").addEventListener("click", () => setZone(""));
+
+
+/* ==========================================================
+   VOICE-NOTE AUDIO PLAYER (Attic Noises)
+========================================================== */
+
+document.querySelectorAll(".voice-note").forEach(note => {
+
+  const audio = new Audio(note.dataset.audio);
+  audio.preload = "none";
+
+  const button = note.querySelector(".voice-play");
+  const time = note.querySelector(".voice-time");
+  const bars = [...note.querySelectorAll(".voice-wave span")];
+  const total = time.textContent;
+
+  const format = seconds => {
+    const s = Math.max(0, Math.ceil(seconds));
+    return `0:${String(s).padStart(2, "0")}`;
+  };
+
+  const paint = () => {
+    const progress = audio.duration ? audio.currentTime / audio.duration : 0;
+    const played = Math.round(progress * bars.length);
+    bars.forEach((bar, i) => bar.classList.toggle("is-played", i < played));
+    if (audio.duration) time.textContent = format(audio.duration - audio.currentTime);
+  };
+
+  button.addEventListener("click", () => {
+    if (audio.paused) {
+      document.querySelectorAll(".voice-note.is-playing .voice-play").forEach(b => b !== button && b.click());
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  });
+
+  audio.addEventListener("play", () => {
+    note.classList.add("is-playing");
+    button.setAttribute("aria-label", "Pause bat roost sounds");
+  });
+
+  audio.addEventListener("pause", () => {
+    note.classList.remove("is-playing");
+    button.setAttribute("aria-label", "Play bat roost sounds");
+  });
+
+  audio.addEventListener("timeupdate", paint);
+
+  audio.addEventListener("ended", () => {
+    audio.currentTime = 0;
+    bars.forEach(bar => bar.classList.remove("is-played"));
+    time.textContent = total;
+  });
+
+});

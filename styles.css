@@ -2197,3 +2197,207 @@ h3 {
 .btn-dark:hover {
   background: var(--charcoal-2);
 }
+
+
+/* ==========================================================
+   EXPERIENCE — enlarged logo (replaces photo)
+========================================================== */
+
+.experience {
+  padding: 72px 0;
+}
+
+.experience-grid {
+  grid-template-columns: .8fr 1.2fr;
+  gap: 56px;
+}
+
+.experience-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.experience-logo img {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  filter: drop-shadow(0 18px 40px rgba(252, 199, 0, .18));
+}
+
+
+/* ==========================================================
+   WARNING SIGN CARDS — media
+========================================================== */
+
+.sign-card.has-media {
+  padding: 0 0 22px;
+  overflow: hidden;
+}
+
+.sign-card.has-media > :not(.sign-media) {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.sign-media {
+  margin-bottom: 18px;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--gray);
+}
+
+.sign-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sign-card.has-media .sign-icon {
+  margin-top: -44px;
+  position: relative;
+  border: 3px solid #fff;
+  background: var(--cyan-soft);
+}
+
+.sign-media-audio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 14px;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(3, 196, 250, .12), transparent 60%),
+    var(--charcoal);
+}
+
+.voice-note {
+  width: 100%;
+  max-width: 240px;
+  padding: 8px 12px 8px 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 22px;
+  background: #1f8bff;
+  background: linear-gradient(180deg, #2a95ff, #0a7cff);
+  box-shadow: 0 8px 20px rgba(10, 124, 255, .35);
+}
+
+.voice-play {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: #0a7cff;
+  cursor: pointer;
+}
+
+.voice-play .i {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  stroke: none;
+}
+
+.voice-play .icon-pause,
+.voice-note.is-playing .voice-play .icon-play {
+  display: none;
+}
+
+.voice-note.is-playing .voice-play .icon-pause {
+  display: block;
+}
+
+.voice-wave {
+  flex: 1;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.voice-wave span {
+  flex: 1;
+  height: var(--h);
+  min-height: 3px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, .45);
+  transition: background .15s ease;
+}
+
+.voice-wave span.is-played {
+  background: #fff;
+}
+
+.voice-time {
+  min-width: 30px;
+  color: #fff;
+  font-size: .76rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.voice-caption {
+  color: rgba(255, 255, 255, .7);
+  font-size: .74rem;
+  font-weight: 600;
+}
+
+@media (max-width: 950px) {
+
+  .experience-logo img {
+    max-width: 320px;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .experience {
+    padding: 56px 0;
+  }
+
+  .experience-grid {
+    gap: 28px;
+  }
+
+  .experience-logo img {
+    max-width: 260px;
+  }
+
+}
+
+
+.sign-media-odor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 18px;
+  background:
+    radial-gradient(circle at 70% 25%, rgba(252, 199, 0, .22), transparent 55%),
+    var(--charcoal);
+  color: var(--yellow);
+  text-align: center;
+}
+
+.sign-media-odor .i {
+  width: 54px;
+  height: 54px;
+  stroke-width: 1.6;
+}
+
+.sign-media-odor span {
+  color: rgba(255, 255, 255, .72);
+  font-size: .74rem;
+  font-weight: 600;
+}
