@@ -2401,3 +2401,32 @@ h3 {
   font-size: .74rem;
   font-weight: 600;
 }
+
+
+/* ==========================================================
+   FOOTER CREDIT
+========================================================== */
+
+.copyright {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
+.powered-by {
+  color: #8d9399;
+  font-size: .78rem;
+  transition: color .2s ease;
+}
+
+.powered-by strong {
+  color: #c5c8cd;
+  font-weight: 700;
+}
+
+.powered-by:hover,
+.powered-by:hover strong {
+  color: var(--yellow);
+}
