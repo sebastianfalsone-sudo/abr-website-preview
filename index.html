@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css?v=9">
+<link rel="stylesheet" href="styles.css?v=10">
 </head>
 
 <body>
@@ -80,39 +80,6 @@
     </symbol>
   </defs>
 </svg>
-
-
-<!-- ========================================================
-     TOP BAR
-======================================================== -->
-
-<div class="topbar">
-
-  <div class="container topbar-content">
-
-    <span>
-      <svg class="i"><use href="#i-pin"/></svg>
-      Serving Volusia County &amp; Surrounding Areas
-    </span>
-
-    <span>
-      <svg class="i"><use href="#i-check"/></svg>
-      Humane Bat Exclusion
-    </span>
-
-    <span>
-      <svg class="i"><use href="#i-award"/></svg>
-      Established 2004
-    </span>
-
-    <a href="tel:+17722601417">
-      <svg class="i"><use href="#i-phone"/></svg>
-      <strong>Call 772-260-1417</strong>
-    </a>
-
-  </div>
-
-</div>
 
 
 <!-- ========================================================
@@ -213,6 +180,55 @@
         <span>Long-Term Prevention</span>
         <span>Local &amp; Trusted</span>
       </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ========================================================
+     HIGHLIGHTS (formerly the top bar)
+======================================================== -->
+
+<section class="highlights" aria-label="Why choose American Bat Removal">
+
+  <div class="container">
+
+    <div class="highlights-bar">
+
+      <div class="highlight">
+        <span class="highlight-icon"><svg class="i"><use href="#i-pin"/></svg></span>
+        <div>
+          <strong>Volusia County &amp; Surrounding Areas</strong>
+          <span>Local service from New Smyrna Beach</span>
+        </div>
+      </div>
+
+      <div class="highlight">
+        <span class="highlight-icon"><svg class="i"><use href="#i-check"/></svg></span>
+        <div>
+          <strong>Humane Bat Exclusion</strong>
+          <span>Bats leave safely and unharmed</span>
+        </div>
+      </div>
+
+      <div class="highlight">
+        <span class="highlight-icon"><svg class="i"><use href="#i-award"/></svg></span>
+        <div>
+          <strong>Established 2004</strong>
+          <span>20+ years removing bats</span>
+        </div>
+      </div>
+
+      <a class="highlight highlight-call" href="tel:+17722601417">
+        <span class="highlight-icon"><svg class="i"><use href="#i-phone"/></svg></span>
+        <div>
+          <strong>Call 772-260-1417</strong>
+          <span>Mon–Fri 8am–6pm</span>
+        </div>
+      </a>
 
     </div>
 
@@ -346,7 +362,7 @@
       </article>
 
       <article class="service-card">
-        <img src="images/technician-tile-roof.jpg" alt="Specialist sealing entry points on a tile roof" loading="lazy">
+        <img src="images/entry-point-sealing.jpg" alt="American Bat Removal specialist sealing entry points along a shingle roofline" loading="lazy">
         <div class="service-content">
           <h3>Entry-Point Sealing</h3>
           <p>
@@ -542,7 +558,8 @@
           <div class="zone zone-1">
             <span class="zone-swatch"></span>
             <div>
-              <div class="zone-head"><strong>0–50 miles</strong><span>Free</span></div>
+              <div class="zone-head"><strong>Local Zone</strong><span>Free</span></div>
+              <div class="zone-range">0–50 miles</div>
               <p>Daytona Beach, Port Orange, Ormond Beach, DeLand, Sanford, Titusville, Palm Coast, Orlando</p>
             </div>
           </div>
@@ -550,7 +567,8 @@
           <div class="zone zone-2">
             <span class="zone-swatch"></span>
             <div>
-              <div class="zone-head"><strong>51–100 miles</strong><span>$75</span></div>
+              <div class="zone-head"><strong>Extended Zone</strong><span>$75</span></div>
+              <div class="zone-range">51–100 miles</div>
               <p>Kissimmee, St. Augustine, Melbourne, Palm Bay, Ocala, Sebastian, Lakeland, Gainesville</p>
             </div>
           </div>
@@ -558,7 +576,8 @@
           <div class="zone zone-3">
             <span class="zone-swatch"></span>
             <div>
-              <div class="zone-head"><strong>101+ miles</strong><span>$100 + $0.50/mi</span></div>
+              <div class="zone-head"><strong>Long Distance Zone</strong><span>$100 + $0.50/mi</span></div>
+              <div class="zone-range">101+ miles</div>
               <p>Jacksonville, Vero Beach, Fort Pierce, Tampa, Port St. Lucie, Stuart, West Palm Beach</p>
             </div>
           </div>
@@ -614,18 +633,21 @@
 
       <div class="price-card featured">
         <span class="badge">Most Common</span>
+        <div class="zone-name">Local Zone</div>
         <h3>0–50 Miles</h3>
         <div class="price">Free</div>
         <p>Estimate</p>
       </div>
 
       <div class="price-card">
+        <div class="zone-name">Extended Zone</div>
         <h3>51–100 Miles</h3>
         <div class="price">$75</div>
         <p>Estimate</p>
       </div>
 
       <div class="price-card">
+        <div class="zone-name">Long Distance Zone</div>
         <h3>101+ Miles</h3>
         <div class="price">$100</div>
         <p>Plus $0.50 per mile beyond 100 miles</p>
@@ -1102,7 +1124,7 @@
 </footer>
 
 
-<script src="script.js?v=8"></script>
+<script src="script.js?v=9"></script>
 
 </body>
 </html>
