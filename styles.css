@@ -2552,3 +2552,337 @@ h3 {
   }
 
 }
+
+
+/* ==========================================================
+   MOBILE POLISH
+========================================================== */
+
+.header-call {
+  display: none;
+}
+
+@media (max-width: 950px) {
+
+  /* tap-to-call button beside the menu */
+  .header-call {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--black);
+    color: var(--yellow);
+  }
+
+  .header-call .i {
+    width: 20px;
+    height: 20px;
+  }
+
+  .nav-cta {
+    margin-left: auto;
+  }
+
+  /* "20+ Years" section stacks cleanly */
+  .experience-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    text-align: center;
+  }
+
+  .experience-grid .check-list {
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .section {
+    padding: 56px 0;
+  }
+
+  h1 {
+    font-size: clamp(2.35rem, 10.5vw, 2.9rem);
+  }
+
+  h2 {
+    font-size: clamp(1.7rem, 7.4vw, 2.1rem);
+  }
+
+  /* hero banner photo */
+  .hero-photo {
+    height: 230px;
+  }
+
+  .hero-inner {
+    padding: 8px 0 72px;
+  }
+
+  .hero-lead {
+    font-size: 1rem;
+  }
+
+  /* intro photo: keep the yellow offset inside the screen */
+  .intro-photo {
+    margin-right: 12px;
+  }
+
+  .intro-photo::before {
+    inset: 12px -12px -12px 12px;
+  }
+
+  .intro-photo img {
+    height: 240px;
+  }
+
+  /* services */
+  .service-card img {
+    height: 210px;
+  }
+
+  /* process: number beside text */
+  .process-grid {
+    gap: 22px;
+  }
+
+  .step {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    column-gap: 16px;
+    align-items: start;
+  }
+
+  .step-number {
+    grid-row: span 2;
+    width: 46px;
+    height: 46px;
+    margin: 0;
+    font-size: 1.15rem;
+    box-shadow: 0 0 0 6px #fff1bd;
+  }
+
+  .step h3 {
+    margin: 4px 0 4px;
+    font-size: 1.08rem;
+  }
+
+  .step p {
+    margin: 0;
+  }
+
+  /* experience logo */
+  .experience {
+    padding: 52px 0;
+  }
+
+  .experience-logo img {
+    max-width: 210px;
+  }
+
+  .experience-number {
+    font-size: 2.8rem;
+  }
+
+  /* areas */
+  .areas-photo img {
+    height: 220px;
+  }
+
+  .map-toggle {
+    margin-top: 32px;
+  }
+
+  /* pricing cards: tighter */
+  .pricing-grid {
+    gap: 14px;
+  }
+
+  .price-card {
+    padding: 22px 18px 20px;
+  }
+
+  .price {
+    font-size: 2.5rem;
+  }
+
+  .price-cta {
+    margin-top: 16px;
+    min-height: 48px;
+  }
+
+  /* swipeable card rows: Bats 101 + warning signs */
+  .education-grid,
+  .signs-grid {
+    display: flex;
+    gap: 14px;
+    margin-left: -4%;
+    margin-right: -4%;
+    padding: 4px 4% 14px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 4%;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .education-grid::-webkit-scrollbar,
+  .signs-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .education-card,
+  .sign-card {
+    flex: 0 0 78%;
+    scroll-snap-align: start;
+  }
+
+  .swipe-hint {
+    display: flex;
+  }
+
+  /* bigger tap targets */
+  .edu-link,
+  .zone-cta {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .voice-play {
+    width: 42px;
+    height: 42px;
+  }
+
+  .voice-play .i {
+    width: 18px;
+    height: 18px;
+  }
+
+  .voice-caption,
+  .sign-media-odor span {
+    font-size: .8rem;
+  }
+
+  .resources a {
+    padding: 9px 14px;
+  }
+
+  /* contact */
+  .contact-form {
+    padding: 24px 18px;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    font-size: 16px;   /* prevents iOS zoom on focus */
+  }
+
+  /* footer: link columns side by side */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 20px;
+  }
+
+  .footer-grid > div:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .footer-grid > div:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .footer-grid > div:last-child ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+  }
+
+  .footer-grid li {
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .footer-grid li a {
+    display: inline-block;
+    padding: 6px 0;
+  }
+
+  .footer-grid .social li a {
+    display: inline-flex;
+    padding: 4px 0;
+  }
+
+  .copyright {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+}
+
+.swipe-hint {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+.swipe-hint .i {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 400px) {
+
+  .nav-cta {
+    display: none;
+  }
+
+  .header-call {
+    margin-left: auto;
+  }
+
+}
+
+@media (max-width: 950px) {
+
+  .nav-cta {
+    padding: 11px 16px;
+    font-size: .8rem;
+  }
+
+}
+
+
+@media (max-width: 950px) {
+
+  .header-call {
+    margin-left: 10px;
+  }
+
+  .menu-button {
+    margin-left: 4px;
+  }
+
+}
+
+@media (max-width: 400px) {
+
+  .header-call {
+    margin-left: auto;
+  }
+
+  .menu-button {
+    margin-left: 4px;
+  }
+
+}
