@@ -2529,3 +2529,26 @@ h3 {
 .benefit:has(.benefit-link) {
   cursor: pointer;
 }
+
+
+/* ==========================================================
+   HERO — colony photo framing + roofline GIF framing
+========================================================== */
+
+.hero .hero-photo img,
+.hero-photo img {
+  object-position: 45% 62%;
+}
+
+.sign-media img[src*="bats-at-dusk"] {
+  object-position: 62% center;
+}
+
+@media (max-width: 700px) {
+
+  .hero .hero-photo img,
+  .hero-photo img {
+    object-position: 45% 70%;
+  }
+
+}
