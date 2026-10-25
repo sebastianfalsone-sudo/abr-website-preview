@@ -2552,3 +2552,28 @@ h3 {
   }
 
 }
+
+
+/* hero colony photo — whole photo shown, front bat near center */
+.hero .hero-photo img,
+.hero-photo img {
+  width: 100%;
+  height: auto !important;
+  object-fit: contain;
+  object-position: 50% 0%;
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 72%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 0%, #000 72%, transparent 100%);
+}
+
+@media (max-width: 700px) {
+
+  .hero .hero-photo img,
+  .hero-photo img {
+    height: 100% !important;
+    object-fit: cover;
+    object-position: 60% 78%;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+}
